@@ -1,0 +1,37 @@
+# Check a list of medications for being legal from a file
+
+def read_in_file_of_medications(file_to_read):
+	# open file
+	# read file
+	# close file 
+	# return a list
+	return list_of_medications
+
+def readin_file_to_check(file_to_check):
+	# open file
+	# read file
+	# close file
+	# return a list
+	return list_to_check
+
+def check_the_list(list_of_medications, list_to_check):
+	# loop from the list to check
+	# each item in the list check if it is in the list of the medications
+	# return results
+	return results
+
+def print_out_results(results):
+	# loop from the results
+	# print each item
+	
+#Mainline
+# 1. Read in a file of medications
+file_to_read = 'medications.txt'
+list_of_medications = read_in_file_of_medications(file_to_read)
+# 2. Read in a list to check
+file_to_check = 'check_list_of_drugs.txt'
+list_to_check = readin_file_to_check(file_to_check) 
+# 3. Check them
+results = check_the_list(list_of_medications, list_to_check)
+# 4. Give results
+print_out_results(results)

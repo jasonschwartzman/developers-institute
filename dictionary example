@@ -1,0 +1,56 @@
+>> my_dict = {}
+>>> my_dict2 = {'name': 'Jason', 'age': 30}
+>>> my_dict
+{}
+>>> type(my_dict)
+<class 'dict'>
+>>> my_dict2
+{'name': 'Jason', 'age': 30}
+>>> my_dict2['name']
+'Jason'
+>>> my_dict2['age']
+30
+>>> my_dict2['age2']
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'age2'
+>>> my_prices = {'apple': 30, 'banana': 20.3, 'meat': 500.56}
+>>> my_dict2.get('age2')
+>>> my_dict2.get('age')
+30
+>>> my_dict2.get('age2') ==''
+False
+>>> my_dict2.get('age2') == None
+True
+>>> personal_info = {'name': 'jason', 'phone': '0545205096', age: 80}
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'age' is not defined
+>>> personal_info = {'name': 'jason', 'phone': '0545205096', 'age': 80}
+>>> personal_info
+{'name': 'jason', 'phone': '0545205096', 'age': 80}
+>>> 
+>>> 
+>>> 
+>>> my_prices
+{'apple': 30, 'banana': 20.3, 'meat': 500.56}
+>>> my_prices['apple']
+30
+>>> my_prices['steak']
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'steak'
+>>> my_prices.get('steak')
+>>> quantity = 10
+>>> my_prices['apple']*quantity
+300
+>>> my_prices['steak']*quantity
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'steak'
+>>> my_prices.get('steak')*quantity
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unsupported operand type(s) for *: 'NoneType' and 'int'
+>>> 
+

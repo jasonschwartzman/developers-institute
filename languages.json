@@ -1,0 +1,9 @@
+{
+	"en":{"q1":"What is your name?", "2":"What is your phone number?", "birthday": "What is your birthday?"}, 
+	"fr": {"q1": "Quel est votre nom ? ", "2": "Quel est votre num de tel?"},
+	"de":{"q1":"Wie ist Ihr Name? ", "2":"Wie ist Ihre Telefonnummer? "},
+	"tr":{"q1":  "İsminiz nedir ?", "2": "Telefon numaranız nedir ?"},
+	"ru":{"q1":"Как вас зовут? ", "2":"Какой ваш номер телефона? "},
+	"il": {"q1": "איך קוראים לך?", "2":"מה המספר שלך?"},
+	"es": {"q1": "¿Cuál es su nombre?", "2": "¿Cuál es su número de teléfono?"}
+}
