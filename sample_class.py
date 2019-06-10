@@ -11,3 +11,5 @@ class Animal:
 
 
 dog = Animal('dog')
+print(dog.weight)
+print(dog.name)
