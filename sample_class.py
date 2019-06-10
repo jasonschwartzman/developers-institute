@@ -13,3 +13,10 @@ class Animal:
 dog = Animal('dog')
 elephant = Animal('elephant')
 print(elephant.name)
+
+print(dog.weight)
+print(dog.name)
+
+cat = Animal('cat')
+print(cat.weight)
+print(cat.name)
