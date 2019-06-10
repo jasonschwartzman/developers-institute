@@ -11,5 +11,5 @@ class Animal:
 
 
 dog = Animal('dog')
-print(dog.weight)
-print(dog.name)
+elephant = Animal('elephant')
+print(elephant.name)
