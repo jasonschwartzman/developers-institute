@@ -4,7 +4,6 @@ class Chatbot(object):
     service_call_number = 0
     answers = []
 
-
     def read_chat_script(self, language_file):
         import json
         with open(language_file, 'r') as my_list:

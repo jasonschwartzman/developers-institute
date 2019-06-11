@@ -15,9 +15,13 @@ class Fish:
 
 class Kosher_Fish(Fish):
 
+    scales = True
+    fins = True
+
+    #If you don't use the INIT here then it will use the INIT from the FISH
     def __init__(self, fins, scales, weight, length, color):
-        self.fins = True
-        self.scales = True
+        #self.fins = True
+        #self.scales = True
         self.weight = weight
         self.length = length
         self.color = color
@@ -26,5 +30,7 @@ class Kosher_Fish(Fish):
 shark = Fish(True, False, 1000, 80, "Grey")
 shark.print_out()
 
-salmon = Kosher_Fish(True, False, 5, 10, "Pink")
+# Even though the user puts in FALSE in scales the net is TRUE because of the INIT.
+
+salmon = Kosher_Fish("KHJKH", "KSJFHKHSF", 5, 10, "Pink")
 salmon.print_out()
