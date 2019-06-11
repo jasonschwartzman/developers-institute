@@ -1,6 +1,6 @@
 # This is my grocery list
 linein = input("What is the number of items in your list? ")
-bad_list = ['meat', 'chicken', 'beef', 'duck', 'turkey', 'bison']
+bad_list = ['pork', 'meat', 'chicken', 'beef', 'duck', 'turkey', 'bison']
 new_item_list = []
 try:
 	number = int(linein)
