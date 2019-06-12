@@ -93,7 +93,7 @@ my_room.add("123 main", "9999", 2, 2)
 
 
 my_reservation = Reservation()
-my_reservation.add_new_booking(my_user, my_room, "01/01/2020", "01/30/2020")
+my_reservation.add(my_user, my_room, "01/01/2020", "01/30/2020")
 
 what would this mean?
 my_reservation.user.lastname
