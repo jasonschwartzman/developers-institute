@@ -1,4 +1,3 @@
-from model_example import Person
 def showAllView(list):
    print('In our db we have',len(list),' users. Here they are:')
    for item in list:
