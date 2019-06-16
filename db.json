@@ -1,14 +1,17 @@
 [
   {
     "first_name":"John",
-    "last_name":"Doe"
+    "last_name":"Doe",
+    "phone":"0545205096"
   },
   {
     "first_name":"Ab",
-    "last_name":"Cohen"
+    "last_name":"Cohen",
+    "phone":"0555551212"
   },
   {
     "first_name":"Jack",
-    "last_name":"Segal"
+    "last_name":"Segal",
+    "phone":"0525205095"
   }
 ]

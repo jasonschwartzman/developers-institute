@@ -9,7 +9,7 @@ def showAll():
 
 def start():
    view.startView()
-   answer = input()
+   answer = input("")
    if answer == 'y':
       return showAll()
    else:
