@@ -3,8 +3,8 @@ import view_example as view
 
 def showAll():
    #gets list of all Person objects
-   people_in_db = Person.getAll()
-   #people_in_db = Person.getAllDB()
+   #people_in_db = Person.getAll()
+   people_in_db = Person.getAllDB()
    #calls view
    return view.showAllView(people_in_db)
 

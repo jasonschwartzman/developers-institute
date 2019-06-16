@@ -32,10 +32,15 @@ class Person(object):
             result.append(person)
         return result
 
+    @classmethod
     def getAllDB(self):
         conn = open_database_connection()
         c = conn.cursor()
-        result = c.execute(
+        record_list = c.execute(
             '''Select first_name, last_name, phone from person''').fetchall()
         close_database_connection(c)
+        result = []
+        for item in record_list:
+            person = Person(item[0], item[1], item[2])
+            result.append(person)
         return result
