@@ -2,7 +2,7 @@ import json
 import sqlite3
 
 def open_database_connection():
-    conn = sqlite3.connect('/Users/yaakovschwartzman/people.db')
+    conn = sqlite3.connect('people.db')
     return conn
 
 def close_database_connection(c):
