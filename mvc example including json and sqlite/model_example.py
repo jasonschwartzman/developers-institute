@@ -1,5 +1,19 @@
 import json
 import sqlite3
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
+
+def open_firebase():
+    cred = credentials.Certificate("/home/jason/PycharmProjects/developers-institute/mvc example including json and sqlite/mvc-example-85de8-firebase-adminsdk-j8015-99aa57407c.json")
+    firebase_admin.initialize_app(cred, {
+        'projectId': 'mvc-example-85de8',
+    })
+
+    db = firestore.client()
+    return db
+
+
 
 def open_database_connection():
     conn = sqlite3.connect('people.db')
@@ -45,3 +59,18 @@ class Person(object):
             person = Person(item[0], item[1], item[2], item[3])
             result.append(person)
         return result
+
+    @classmethod
+    def getAllFirestore(self):
+        db = open_firebase()
+        # Then query for documents
+        person_ref = db.collection(u'person')
+        docs = person_ref.get()
+        result = []
+        for doc in docs:
+            item = doc.to_dict()
+            person = Person(item['last_name'], item['first_name'], item['phone'], doc.id)
+            result.append(person)
+        return result
+
+
