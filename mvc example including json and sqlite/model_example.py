@@ -11,10 +11,11 @@ def close_database_connection(c):
 
 
 class Person(object):
-    def __init__(self, first_name=None, last_name=None, phone=None):
+    def __init__(self, first_name=None, last_name=None, phone=None, id=None):
         self.first_name = first_name
         self.last_name = last_name
         self.phone = phone
+        self.id = id
 
     # returns Person name, ex: John Doe
     def name(self):
@@ -37,10 +38,10 @@ class Person(object):
         conn = open_database_connection()
         c = conn.cursor()
         record_list = c.execute(
-            '''Select first_name, last_name, phone from person''').fetchall()
+            '''Select first_name, last_name, phone, id from person''').fetchall()
         close_database_connection(c)
         result = []
         for item in record_list:
-            person = Person(item[0], item[1], item[2])
+            person = Person(item[0], item[1], item[2], item[3])
             result.append(person)
         return result
