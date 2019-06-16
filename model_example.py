@@ -1,4 +1,14 @@
 import json
+import sqlite3
+
+def open_database_connection():
+    conn = sqlite3.connect('/Users/yaakovschwartzman/people.db')
+    return conn
+
+def close_database_connection(c):
+    c.close()
+    return
+
 
 class Person(object):
     def __init__(self, first_name=None, last_name=None, phone=None):
@@ -20,4 +30,12 @@ class Person(object):
         for item in json_list:
             person = Person(item['first_name'], item['last_name'], item['phone'])
             result.append(person)
+        return result
+
+    def getAllDB(self):
+        conn = open_database_connection()
+        c = conn.cursor()
+        result = c.execute(
+            '''Select first_name, last_name, phone from person''').fetchall()
+        close_database_connection(c)
         return result
