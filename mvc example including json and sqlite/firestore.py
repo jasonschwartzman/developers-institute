@@ -3,33 +3,20 @@ import sqlite3
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
-import mysql.connector
 
 def open_firebase():
-    #cred = credentials.Certificate("/Users/yaakovschwartzman/PycharmProjects/new_developers-institute/mvc example including json and sqlite/mvc-example-85de8-firebase-adminsdk-j8015-99aa57407c.json")
-    cred = credentials.Certificate("/Users/yaakovschwartzman/PycharmProjects/new_developers-institute/mvc example including json and sqlite/my-new-cloud-database-firebase-adminsdk-mdx7u-c463d4be88.json")
-    #firebase_admin.initialize_app(cred, {
-    #    'projectId': 'mvc-example-85de8',
-    #})
+    cred = credentials.Certificate("/home/jason/PycharmProjects/developers-institute/mvc example including json and sqlite/mvc-example-85de8-firebase-adminsdk-j8015-99aa57407c.json")
     firebase_admin.initialize_app(cred, {
-       'projectId': 'my-new-cloud-database',
+        'projectId': 'mvc-example-85de8',
     })
 
     db = firestore.client()
     return db
 
 
-def open_rds_connection():
-    conn = mysql.connector.connect(
-        host="di-test.cluster-cuaie290qfbf.eu-west-1.rds.amazonaws.com:3306",
-        user="diadmin",
-        passwd="diadmin613!"
-    )
-    return conn
 
 def open_database_connection():
     conn = sqlite3.connect('people.db')
-
     return conn
 
 def close_database_connection(c):
@@ -86,8 +73,3 @@ class Person(object):
             result.append(person)
         return result
 
-    def addNewFirestore(self, last_name, first_name):
-        db = open_firebase()
-        person_ref = db.collection(u'person')
-        doc_ref = person_ref.document()
-        doc_ref.set({u'first_name': first_name, u'last_name': last_name})
