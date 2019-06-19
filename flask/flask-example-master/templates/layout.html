@@ -2,11 +2,12 @@
 <html>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.united.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 
 <title>Flask Example</title>
-<nav class="navbar navbar-inverse">
+<nav class="navbar bg-dark navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -23,6 +24,7 @@
             <li><a href="/public/">Public</a></li>
             {% if session.get("current_user", None) != None %}
 	       <li><a href="/private/">Private</a></li>
+            <li><a href="/design-institute">Design Institute</a></li>
 	    {% endif%}
             {% if session.get("current_user", None) == "ADMIN" %}
 	      <li><a href="/admin">Admin Dashboard</a></li>

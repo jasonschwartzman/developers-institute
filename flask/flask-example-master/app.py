@@ -42,6 +42,14 @@ def FUN_413(error):
 def FUN_root():
     return render_template("index.html")
 
+@app.route("/design-institute")
+def FUN_public_design_institute():
+    #if session.get("current_user", None) == "ADMIN":
+    if "current_user" in session.keys():
+        return render_template("design-institute_page.html")
+    else:
+        return abort(401)
+
 @app.route("/public/")
 def FUN_public():
     return render_template("public_page.html")
