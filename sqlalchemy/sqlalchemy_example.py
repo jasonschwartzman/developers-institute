@@ -31,3 +31,5 @@ results = connection.execute(query)
 #Inserting record one by one
 query = db.insert(users).values(id='NEWUSER', pw='jhksdhkdhfkjhsd')
 ResultProxy = connection.execute(query)
+
+
