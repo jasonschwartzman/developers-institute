@@ -6,11 +6,23 @@ user_db_file_location = "database_file/users.db"
 note_db_file_location = "database_file/notes.db"
 image_db_file_location = "database_file/images.db"
 
-def list_users():
-    _conn = sqlite3.connect(user_db_file_location)
-    _c = _conn.cursor()
+def open_connection(location):
+    _conn = sqlite3.connect(location)
+    return
 
+def get_db_info_(_conn, sql)
+    _c = _conn.cursor()
     _c.execute("select id from users;")
+    result = _c.fetchall()
+    return result
+
+
+
+
+def list_users():
+    _conn = open_connection(user_db_file_location)
+    result = get_db_info_(_conn, "select id from users")
+
     result = [x[0] for x in _c.fetchall()]
 
     _conn.close()
@@ -18,7 +30,7 @@ def list_users():
     return result
 
 def verify(id, pw):
-    _conn = sqlite3.connect(user_db_file_location)
+    _conn = open_connection(user_db_file_location)
     _c = _conn.cursor()
 
     _c.execute("select pw from users where id = '" + id + "';")
@@ -29,14 +41,14 @@ def verify(id, pw):
     return result
 
 def delete_user_from_db(id):
-    _conn = sqlite3.connect(user_db_file_location)
+    _conn = open_connection(user_db_file_location)
     _c = _conn.cursor()
     _c.execute("delete from users where id = '" + id + "';")
     _conn.commit()
     _conn.close()
 
     # when we delete a user from database USERS, we also need to delete all his or her notes data from database NOTES
-    _conn = sqlite3.connect(note_db_file_location)
+    _conn = open_connection(note_db_file_location)
     _c = _conn.cursor()
     _c.execute("delete from notes where user = '" + id + "';")
     _conn.commit()
