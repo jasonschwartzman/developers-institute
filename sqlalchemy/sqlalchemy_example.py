@@ -23,3 +23,11 @@ query2 = db.select([users]).where(users.columns.id == 'ADMIN')
 ResultProxy = connection.execute(query2)
 ResultSet = ResultProxy.fetchall()
 print(ResultSet)
+results = connection.execute(query)
+#Example of an update
+query = db.update(users).values(id="YAAKOV").where(users.columns.id=='YAAKOV2')
+results = connection.execute(query)
+#Example of an insert
+#Inserting record one by one
+query = db.insert(users).values(id='NEWUSER', pw='jhksdhkdhfkjhsd')
+ResultProxy = connection.execute(query)
